@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 <br/><br/>
 
@@ -32,7 +37,7 @@ stepsDay <- stepsDay[c(1,2)]
 hist(stepsDay$steps, main="Histogram for steps per day", xlab="steps/day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 ```r
 mean(stepsDay$steps)
@@ -63,7 +68,7 @@ stepsInterval <- ddply(activityData, "interval", summarize, Avg=mean(steps,na.rm
 plot(stepsInterval, type="l", xlab="5 minute interval", ylab="Avg. Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 ```r
 #max steps 5 minute interval
@@ -109,7 +114,7 @@ activityData$steps[activityData.naData] <- activityData.withIntervalMeans$impute
 hist(stepsDay$steps, main="Histogram for steps per day", xlab="steps/day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
 ```r
 #histogram imputed steps/dat
@@ -118,7 +123,7 @@ stepsImputedDay <- stepsImputedDay[c(1,5)]
 hist(stepsImputedDay$imputedSteps, main="Histogram for imputed steps per day", xlab="steps/day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-2.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-2.png) 
 
 ```r
 #Mean & Median per day
@@ -182,7 +187,7 @@ with(activityData.weekends.intervalAverage,plot(interval,Avg, type="l",main="wee
 with(activityData.weekdays.intervalAverage,plot(interval,Avg, type="l", main="weekdays", ylab="#steps"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 
 ###Conclusion: There is a difference in step activity between weekends and weekdays.  While there is a larger initial single spike for weekdays, weekends show an increase in step activity across waking time intervals.
